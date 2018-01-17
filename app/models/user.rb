@@ -7,4 +7,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   validates_presence_of :first_name, :last_name
+
+  # It returns the full name of the user
+  #
+  def full_name()
+     last_name.upcase + ", " + first_name.upcase
+  end
 end
